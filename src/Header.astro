@@ -1,0 +1,18 @@
+<script>
+  // bug le parser déconne j'ai fait une issue là voir ce qu'il dit le man
+  // https://github.com/ota-meshi/eslint-plugin-astro/issues/132
+  const header = document.getElementById('navheader') as HTMLElement;
+  const menuBtn = document.getElementById('menubtn') as HTMLElement;
+  const logo = document.getElementById('navlogo') as HTMLElement;
+
+  menuBtn.onclick = () => header.classList.toggle('open');
+
+  if (matchMedia('(pointer:fine)').matches) {
+    logo.addEventListener('contextmenu', event => {
+      event.preventDefault();
+      window.location.href = '/press';
+    });
+  }
+</script>
+
+<header id="navheader" class="fixed top-0 inset-x-0 h-12"></header>
